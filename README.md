@@ -1,4 +1,5 @@
-# Gull
+# Workzy Angular 8 ui
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 
