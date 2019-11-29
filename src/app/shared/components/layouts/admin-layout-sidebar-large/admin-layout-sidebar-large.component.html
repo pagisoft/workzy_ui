@@ -2,11 +2,8 @@
     <div>
         <app-header-sidebar-large></app-header-sidebar-large>
     </div>
-    <div class="side-content-wrap">
-        <app-sidebar-large></app-sidebar-large>
-    </div>
-    <div class="main-content-wrap d-flex flex-column" 
-    [ngClass]="{'sidenav-open': navService.sidebarState.sidenavOpen}" 
+   
+    <div class="main-content-wrap d-flex flex-column p-0"  
     [perfectScrollbar]="{suppressScrollX: true}">
         <router-outlet></router-outlet>
         <div class="flex-grow-1"></div>
@@ -16,4 +13,3 @@
         </div>
     </div>
 </div>
-<app-search *ngIf="searchService.searchOpen"></app-search>

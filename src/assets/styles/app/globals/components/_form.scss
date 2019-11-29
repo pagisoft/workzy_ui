@@ -242,27 +242,3 @@ select.form-control {
         }
     }
 }
-
-[dir="rtl"] {
-    .form-check {
-        padding-left: 0;
-        padding-right: 1.25rem;
-    }
-    .form-check-input {
-        margin-left: 0;
-        margin-right: -1.25rem;
-    }
-    .switch {
-        padding-left: 0;
-        padding-right: 50px;
-    }
-    .checkbox,
-    .radio {
-      padding-left: 0px;
-      padding-right: 28px;
-        .checkmark {
-          left: auto;
-          right: 0;
-        }
-    }
-}

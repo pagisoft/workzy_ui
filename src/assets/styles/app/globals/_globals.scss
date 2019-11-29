@@ -1,12 +1,8 @@
-@import 'colors';
-@import 'mixins/mixins';
-@import 'palette';
-
 @import 'animations';
 @import 'typography';
 @import 'height-width';
 @import 'box-shadow';
-@import 'layouts/layouts';
+@import 'layout';
 @import 'components/components';
 @import 'views/views';
 
@@ -17,8 +13,6 @@ body {
   letter-spacing: .3px;
   line-height: 1.6;
   background: $background;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 [tabindex='-1']:focus {
@@ -116,8 +110,8 @@ blockquote {
     top: calc(50% - 100px);
     .logo {
         display: inline-block !important;
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: auto;
     }
     
 }
@@ -128,14 +122,6 @@ blockquote {
         .big-bubble {
             width: 220px;
             height: 220px;
-        }
-    }
-}
-
-[dir="rtl"] {
-    .rtl-ps-none {
-        .ps__rail-x, .ps__rail-y {
-            display: none;
         }
     }
 }

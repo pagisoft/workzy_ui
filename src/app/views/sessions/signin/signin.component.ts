@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedAnimations } from 'src/app/shared/animations/shared-animations';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators ,FormControl} from '@angular/forms';
 import { AuthService } from '../../../shared/services/auth.service';
 import { Router, RouteConfigLoadStart, ResolveStart, RouteConfigLoadEnd, ResolveEnd } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { LocalStoreService } from '../../../shared/services/local-store.service';
+
 
 @Component({
     selector: 'app-signin',
@@ -43,8 +46,7 @@ export class SigninComponent implements OnInit {
         this.loadingText = 'Sigining in...';
         this.auth.signin(this.signinForm.value)
             .subscribe(res => {
-                this.router.navigateByUrl('/dashboard/v1');
-                this.loading = false;
+                alert(" Signin Successfull - "+ res.token);
             });
     }
 

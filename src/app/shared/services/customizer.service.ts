@@ -10,13 +10,13 @@ export class CustomizerService {
     {
       title: "Sidebar Compact",
       name: "applayout-sidebar-compact",
-      img: "./assets/images/screenshots/02_preview.png",
+      img: "./assetsimages/screenshots/02_preview.png",
       active: false
     },
     {
       title: "Sidebar Large",
       name: "applayout-sidebar-large",
-      img: "./assets/images/screenshots/04_preview.png",
+      img: "./assetsimages/screenshots/04_preview.png",
       active: true
     }
   ];

@@ -63,6 +63,15 @@
     }
 }
 
+// .pagination-previous, 
+// .pagination-next {
+//     text-indent: -1000px !important;
+// }
+// .pagination-previous::before, 
+// .pagination-next::after {
+   
+// }
+
 .ngx-pagination .pagination-previous a::before, 
 .ngx-pagination .pagination-previous.disabled::before,
 
@@ -89,10 +98,4 @@
 .ngx-pagination .pagination-next a::after, 
 .ngx-pagination .pagination-next.disabled::after {
     content: "\f07d" !important;
-}
-
-[dir="rtl"] {
-    .pagination-next, .pagination-previous {
-        transform: rotate(180deg);
-    }
 }

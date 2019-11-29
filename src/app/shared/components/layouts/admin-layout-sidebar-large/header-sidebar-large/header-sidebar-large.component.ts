@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationService } from '../../../../services/navigation.service';
-import { SearchService } from '../../../../services/search.service';
-import { AuthService } from '../../../../services/auth.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {
+    AuthService,
+    FacebookLoginProvider,
+    GoogleLoginProvider,
+    LinkedinLoginProvider
+} from 'angular-6-social-login';
 
 @Component({
   selector: 'app-header-sidebar-large',
@@ -13,78 +18,49 @@ export class HeaderSidebarLargeComponent implements OnInit {
     notifications: any[];
 
     constructor(
+      private modalService: NgbModal,
       private navService: NavigationService,
-      public searchService: SearchService,
-      private auth: AuthService
+      private socialAuthService: AuthService
     ) {
-      this.notifications = [
-        {
-          icon: 'i-Speach-Bubble-6',
-          title: 'New message',
-          badge: '3',
-          text: 'James: Hey! are you busy?',
-          time: new Date(),
-          status: 'primary',
-          link: '/chat'
-        },
-        {
-          icon: 'i-Receipt-3',
-          title: 'New order received',
-          badge: '$4036',
-          text: '1 Headphone, 3 iPhone x',
-          time: new Date('11/11/2018'),
-          status: 'success',
-          link: '/tables/full'
-        },
-        {
-          icon: 'i-Empty-Box',
-          title: 'Product out of stock',
-          text: 'Headphone E67, R98, XL90, Q77',
-          time: new Date('11/10/2018'),
-          status: 'danger',
-          link: '/tables/list'
-        },
-        {
-          icon: 'i-Data-Power',
-          title: 'Server up!',
-          text: 'Server rebooted successfully',
-          time: new Date('11/08/2018'),
-          status: 'success',
-          link: '/dashboard/v2'
-        },
-        {
-          icon: 'i-Data-Block',
-          title: 'Server down!',
-          badge: 'Resolved',
-          text: 'Region 1: Server crashed!',
-          time: new Date('11/06/2018'),
-          status: 'danger',
-          link: '/dashboard/v3'
-        }
-      ];
+      
     }
   
     ngOnInit() {
     }
   
-    toggelSidebar() {
-      const state = this.navService.sidebarState;
-      if (state.childnavOpen && state.sidenavOpen) {
-        return state.childnavOpen = false;
-      }
-      if (!state.childnavOpen && state.sidenavOpen) {
-        return state.sidenavOpen = false;
-      }
-      if (!state.sidenavOpen && !state.childnavOpen) {
-          state.sidenavOpen = true;
-          setTimeout(() => {
-              state.childnavOpen = true;
-          }, 50);
-      }
-    }
+    
   
-    signout() {
-      this.auth.signout();
+    
+    open(content) {
+      this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then((result) => {
+        console.log(result);
+      }, (reason) => {
+        console.log('Err!', reason);
+      });
     }
+
+
+    public socialSignIn(socialPlatform : string) {
+    let socialPlatformProvider;
+    if(socialPlatform == "facebook"){
+      socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
+    }else if(socialPlatform == "google"){
+      socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
+    } else if (socialPlatform == "linkedin") {
+      socialPlatformProvider = LinkedinLoginProvider.PROVIDER_ID;
+    }
+    
+      this.socialAuthService.signIn(socialPlatformProvider).then(
+        (userData) => {
+          console.log(socialPlatform+" sign in data : " , userData);
+          // Now sign-in with userData
+          // ...
+             alert("Login successfully!") ;
+        }
+      );
+    }
+
+
 
 }

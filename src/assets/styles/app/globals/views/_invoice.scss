@@ -1,6 +1,7 @@
 .invoice-summary {
     width: 220px;
     text-align: right;
+    float: right;
     &.invoice-summary-input {
         width: 320px;
         p, h5 {
@@ -38,11 +39,5 @@
       left: 0;
       top: 0;
       width: 100%;
-    }
-}
-
-[dir="rtl"] {
-    .invoice-summary {
-        text-align: left !important;
     }
 }

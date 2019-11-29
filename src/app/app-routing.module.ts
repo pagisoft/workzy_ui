@@ -35,6 +35,10 @@ const routes: Routes = [
       {
         path: 'others',
         loadChildren: () => import('./views/others/others.module').then(m => m.OthersModule)
+      },
+      {
+        path: 'new/wizard',
+        loadChildren: () => import('./views/wizard/wizard.module').then(m => m.WizardModule)
       }
     ]
   },

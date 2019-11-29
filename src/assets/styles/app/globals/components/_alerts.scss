@@ -31,7 +31,6 @@
     .toast {
         border-radius: 10px;
         color: $foreground;
-        opacity: 1 !important;
     }
     .toast-close-button {
         position: absolute;
@@ -58,7 +57,7 @@
     .toast-warning {
         background-color: $background;
         box-shadow: 0 4px 15px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1), inset 0 2px 0 0 $warning;
-        background-image: url('../../images/danger.svg');
+        background-image: url('../../images//danger.svg');
         .toast-progress {
             background: $warning;
         }
@@ -69,7 +68,7 @@
     .toast-info {
         background-color: $background;
         box-shadow: 0 4px 15px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1), inset 0 2px 0 0 $info;
-        background-image: url('../../images/info.svg');
+        background-image: url('../../images//info.svg');
         .toast-progress {
             background: $info;
         }
@@ -80,7 +79,7 @@
     .toast-error {
         background-color: $background;
         box-shadow: 0 4px 15px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1), inset 0 2px 0 0 $danger;
-        background-image: url('../../images/close.svg');
+        background-image: url('../../images//close.svg');
         .toast-progress {
             background: $danger;
         }
