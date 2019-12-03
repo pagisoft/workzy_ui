@@ -22,5 +22,5 @@ jobs:
       uses: actions/setup-node@v1.1.0
     - name: npm install and npm run build
       run: |
-        rimraf ./dist
+        rm -rf ./dist
         ng build --prod
