@@ -1,6 +1,9 @@
 name: Angular CI
 
-on: [push]
+on: 
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -15,3 +18,11 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+    - name: Node $
+      uses: actions/setup-node@v1
+      with: 
+        node-version: $
+    - name: npm install and npm run build
+      run: |
+        npm ci
+        npm run build:ci
