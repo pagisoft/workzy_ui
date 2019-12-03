@@ -20,6 +20,8 @@ jobs:
         echo test, and deploy your project.
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v1.1.0
+    - name: Angular Github Actions
+      uses: mayur-rawte/github-angular-actions@latest
     - name: npm install and npm run build
       run: |
         rm -rf ./dist
