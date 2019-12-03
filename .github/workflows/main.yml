@@ -21,7 +21,7 @@ jobs:
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v1.1.0
     - name: npm install
-      uses: npm install -g @angular/cli
+      run: npm install -g @angular/cli
     - name: npm install and npm run build
       run: |
         rm -rf ./dist
