@@ -22,8 +22,8 @@ jobs:
       uses: actions/setup-node@v1.1.0
     - name: npm install
       run: |
-        npm install @angular/cli
-        npm install @angular-devkit/build-angular
+        npm install -g @angular/cli
+        npm install -g @angular-devkit/build-angular
     - name: npm install and npm run build
       run: |
         rm -rf ./dist
