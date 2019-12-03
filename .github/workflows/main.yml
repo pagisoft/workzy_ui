@@ -24,6 +24,7 @@ jobs:
       run: |
         npm install -g @angular/cli
         npm install -g @angular-devkit/build-angular
+        npm install -g @angular/compiler-cli
     - name: npm install and npm run build
       run: |
         rm -rf ./dist
