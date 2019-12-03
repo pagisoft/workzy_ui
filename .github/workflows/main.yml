@@ -12,12 +12,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
     - name: Setup Node.js for use with actions
       uses: actions/setup-node@v1.1.0
     - name: npm install
@@ -30,4 +24,5 @@ jobs:
     - name: npm install and npm run build
       run: |
         rm -rf ./dist
+        npm link
         ng build --prod
