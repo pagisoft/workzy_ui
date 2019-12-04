@@ -32,11 +32,11 @@ jobs:
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
       with:
-        ftp_server: ${{ secrets.FTP_HOST }}
-        ftp_username: ${{ secrets.FTP_USERNAME }}
-        ftp_password: ${{ secrets.FTP_PASSWORD }}
-        method: ftp
-        port: 21
-        local_dir: ./dist 
-        remote_dir: /qa.workzy.eu 
+        FTP_SERVER: ${{ secrets.FTP_HOST }}
+        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        METHOD: ftp
+        PORT: 21
+        LOCAL_DIR: ./dist 
+        REMOTE_DIR: /qa.workzy.eu 
         ARGS: --verbose --dry-run	
