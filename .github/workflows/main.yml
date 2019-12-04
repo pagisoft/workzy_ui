@@ -31,8 +31,8 @@ jobs:
       run: ls -la ./dist
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
-      with:
-        FTP_SERVER: pagisoft.pl
+      env:
+        FTP_SERVER: ${{ secrets.FTP_SERVER }}
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         METHOD: ftp
