@@ -29,3 +29,14 @@ jobs:
     - name: Verify installation
       working-directory: ${{ github.workspace }}
       run: ls -la ./dist
+    - name: FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      with:
+        ftp_server: ${{ secrets.FTP_HOST }}
+        ftp_username: ${{ secrets.FTP_USERNAME }}
+        ftp_password: ${{ secrets.FTP_PASSWORD }}
+        method: ftp
+        port: 21
+        local_dir: ./dist 
+        remote_dir: /qa.workzy.eu 
+        ARGS: --verbose --dry-run	
