@@ -32,7 +32,7 @@ jobs:
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
       with:
-        FTP_SERVER: 31.186.86.189
+        FTP_SERVER: pagisoft.pl
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         METHOD: ftp
