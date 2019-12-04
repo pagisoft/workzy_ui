@@ -39,4 +39,4 @@ jobs:
         PORT: 21
         LOCAL_DIR: ./dist 
         REMOTE_DIR: /qa.workzy.eu 
-        ARGS: --verbose --dry-run	
+        ARGS: --delete
