@@ -23,7 +23,7 @@ const routes: Routes = [
     component: AuthLayoutComponent,
     children: [
       {
-        path: 'sessions',
+        path: 'panel',
         loadChildren: () => import('./views/sessions/sessions.module').then(m => m.SessionsModule)
       }
     ]

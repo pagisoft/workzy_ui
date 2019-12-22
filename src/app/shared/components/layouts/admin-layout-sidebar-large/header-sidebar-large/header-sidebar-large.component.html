@@ -1,138 +1,109 @@
+ <!-- Header -->
+    <header>
+      <nav class="navbar navbar-expand-xl absolute-nav transparent-nav cp-nav navbar-light bg-light fluid-nav">
+        <a class="navbar-brand" href="index.html"> 
+          <img src="assets/images/logo.png" class="img-fluid" alt="">
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <header class="header-2">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="header-top">
-              <div class="logo-area">
-                <a routerLink="/dashboard/v1"><img src="/assets/images/logo-2.png" alt=""></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         
+          <ul class="navbar-nav ml-auto main-nav">
+            <li class="menu-item active"><a title="Home" href="home-1.html">JOB OFFERS</a></li>
+           
+            <li class="menu-item dropdown">
+              <a title="" href="#" >COMPANIES</a>
+             
+            </li>
+            
+           
+            <li class="menu-item post-job"><a title="Title" href="post-job.html"><i class="fas fa-plus"></i>Post a Job</a></li>
+          </ul>
+          <ul class="navbar-nav ml-auto account-nav">
+           
+            <li class="menu-item login-popup"><button title="Title" type="button" data-toggle="modal" data-target="#exampleModalLong">TALENT LOGIN</button></li>
+            <li class="menu-item login-popup"><button title="Title" type="button" data-toggle="modal" routerLink="/panel/sign-in">EMPLOYER LOGIN</button></li>
+          </ul> 
+        </div>
+      </nav>
+      <!-- Modal -->
+      <div class="account-entry">
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i data-feather="user"></i>Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-              <div class="header-top-toggler">
-                <div class="header-top-toggler-button"></div>
-              </div>
-              <div class="top-nav">
+              <div class="modal-body">
                 
-                <div class="dropdown header-top-account login-modals">
-                  <button title="Title" type="button"  routerLink="/sessions/signin">Employer Login </button>
-                  <button title="Title" type="button" (click)="open(modalBasic)">Talent Login</button>
+                <div class="shortcut-login">
+                  
+                  <div class="buttons">
+                    <a class="facebook" (click)="socialSignIn('facebook')"><i class="fab fa-facebook-f"></i>Facebook</a>
+                    <a  class="google" (click)="socialSignIn('google')"><i class="fab fa-google"></i>Google</a>
+                  </div>
                 </div>
-                
               </div>
             </div>
-            <nav class="navbar navbar-expand-lg cp-nav-2">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                  <li class="menu-item active"><a title="Home" routerLink="/dashboard/v1">Home</a></li>
-                  <li class="menu-item dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Jobs</a>
-                    <ul  class="dropdown-menu">
-                      <li class="menu-item"><a  href="job-listing.html">Job Listing</a></li>
-                      <li class="menu-item"><a  href="job-listing-with-map.html">Job Listing With Map</a></li>
-                      <li class="menu-item"><a  href="job-details.html">Job Details</a></li>
-                      <!-- <li class="menu-item"><a  href="post-job.html">Post Job</a></li> -->
-                    </ul>
-                  </li>
-                  <li class="menu-item dropdown">
-                    <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Candidates</a>
-                    <ul  class="dropdown-menu">
-                      <li class="menu-item"><a  href="candidate.html">Candidate Listing</a></li>
-                      <li class="menu-item"><a  href="candidate-details.html">Candidate Details</a></li>
-                      <li class="menu-item"><a  href="add-resume.html">Add Resume</a></li>
-                    </ul>
-                  </li>
-                  <li class="menu-item dropdown">
-                    <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Employers</a>
-                    <ul  class="dropdown-menu">
-                      <li class="menu-item"><a  href="employer-listing.html">Employer Listing</a></li>
-                      <li class="menu-item"><a  href="employer-details.html">Employer Details</a></li>
-                      <li class="menu-item"><a  href="employer-dashboard-post-job.html">Post a Job</a></li>
-                    </ul>
-                  </li>
-                  <li class="menu-item dropdown">
-                    <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Dashboard</a>
-                    <ul  class="dropdown-menu">
-                      <li class="menu-item dropdown">
-                        <a href="#" data-toggle="dropdown"  class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Candidate Dashboard</a>
-                        <ul class="dropdown-menu">
-                          <li class="menu-item"><a  href="dashboard.html">Dashboard</a></li>
-                          <li class="menu-item"><a  href="dashboard-edit-profile.html">Edit Profile</a></li>
-                          <li class="menu-item"><a  href="add-resume.html">Add Resume</a></li>
-                          <li class="menu-item"><a  href="resume.html">Resume</a></li>
-                          <li class="menu-item"><a  href="edit-resume.html">Edit Resume</a></li>
-                          <li class="menu-item"><a  href="dashboard-bookmark.html">Bookmarked</a></li>
-                          <li class="menu-item"><a  href="dashboard-applied.html">Applied</a></li>
-                          <li class="menu-item"><a  href="dashboard-pricing.html">Pricing</a></li>
-                          <li class="menu-item"><a  href="dashboard-message.html">Message</a></li>
-                          <li class="menu-item"><a  href="dashboard-alert.html">Alert</a></li>
-                        </ul>
-                      </li>
-                      <li class="menu-item dropdown">
-                        <a href="#" data-toggle="dropdown"  class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Employer Dashboard</a>
-                        <ul class="dropdown-menu">
-                          <li class="menu-item"><a href="employer-dashboard.html">Employer Dashboard</a></li>
-                          <li class="menu-item"><a href="employer-dashboard-edit-profile.html">Edit Profile</a></li>
-                          <li class="menu-item"><a href="employer-dashboard-manage-candidate.html">Manage Candidate</a></li>
-                          <li class="menu-item"><a href="employer-dashboard-manage-job.html">Manage Job</a></li>
-                          <li class="menu-item"><a href="employer-dashboard-message.html">Dashboard Message</a></li>
-                          <li class="menu-item"><a href="employer-dashboard-pricing.html">Dashboard Pricing</a></li>
-                          <li class="menu-item"><a href="employer-dashboard-post-job.html">Post Job</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="menu-item dropdown">
-                    <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Pages</a>
-                    <ul  class="dropdown-menu">
-                      <li class="menu-item"><a href="about-us.html">About Us</a></li>
-                      <li class="menu-item"><a href="how-it-work.html">How It Works</a></li>
-                      <li class="menu-item"><a href="pricing.html">Pricing Plan</a></li>
-                      <li class="menu-item"><a href="faq.html">FAQ</a></li>
-                      <li class="menu-item dropdown">
-                        <a href="#" data-toggle="dropdown"  class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">News &amp; Advices</a>
-                        <ul class="dropdown-menu">
-                          <li class="menu-item"><a href="blog.html">News</a></li>
-                          <li class="menu-item"><a href="blog-grid.html">News Grid</a></li>
-                          <li class="menu-item"><a href="blog-details.html">News Details</a></li>
-                        </ul>
-                      </li>
-                      <li class="menu-item"><a href="checkout.html">Checkout</a></li>
-                      <li class="menu-item"><a href="payment-complete.html">Payment Complete</a></li>
-                      <li class="menu-item"><a href="invoice.html">Invoice</a></li>
-                      <li class="menu-item"><a href="terms-and-condition.html">Terms And Condition</a></li>
-                      <li class="menu-item"><a href="404.html">404 Page</a></li>
-                      <li class="menu-item"><a href="login.html">Login</a></li>
-                      <li class="menu-item"><a href="register.html">Register</a></li>
-                    </ul>
-                  </li>
-                  <li class="menu-item"><a href="contact.html">Contact Us</a></li>
-                  <li class="menu-item post-job"><a href="post-job.html"><i class="fas fa-plus"></i>Post a Job</a></li>
-                </ul>
+          </div>
+        </div>
+        <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"><i data-feather="edit"></i>Registration</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-            </nav>
+              <div class="modal-body">
+                <div class="account-type">
+                  <label for="idRegisterCan">
+                    <input id="idRegisterCan" type="radio" name="register">
+                    <span>Candidate</span>
+                  </label>
+                  <label for="idRegisterEmp">
+                    <input id="idRegisterEmp" type="radio" name="register">
+                    <span>Employer</span>
+                  </label>
+                </div>
+                <form action="#">
+                  <div class="form-group">
+                    <input type="text" placeholder="Username" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" placeholder="Email Address" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" placeholder="Password" class="form-control">
+                  </div>
+                  <div class="more-option terms">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                      <label class="form-check-label" for="defaultCheck2">
+                        I accept the <a href="#">terms & conditions</a>
+                      </label>
+                    </div>
+                  </div>
+                  <button class="button primary-bg btn-block">Register</button>
+                </form>
+                <div class="shortcut-login">
+                  <span>Or connect with</span>
+                  <div class="buttons">
+                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i>Facebook</a>
+                    <a href="#" class="google"><i class="fab fa-google"></i>Google</a>
+                  </div>
+                  <p>Already have an account? <a href="#">Login</a></p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-     
     </header>
-    <ng-template #modalBasic let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Talent Login</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <button class="loginBtn loginBtn--facebook" (click)="socialSignIn('facebook')">
-  Login with Facebook
-</button>
-
-<button class="loginBtn loginBtn--google" (click)="socialSignIn('google')">
-  Login with Google
-</button>
-  </div>
-  
-</ng-template>
+    <!-- Header End -->

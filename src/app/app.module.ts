@@ -21,7 +21,7 @@ export function getAuthServiceConfigs() {
       [
         {
           id: FacebookLoginProvider.PROVIDER_ID,
-          provider: new FacebookLoginProvider("2287384344688967")
+          provider: new FacebookLoginProvider("1905480936348076")
         },
         {
           id: GoogleLoginProvider.PROVIDER_ID,

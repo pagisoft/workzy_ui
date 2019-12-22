@@ -6,15 +6,15 @@ import { ForgotComponent } from './forgot/forgot.component';
 
 const routes: Routes = [
   {
-    path: 'signup',
+    path: 'sign-up',
     component: SignupComponent
   },
   {
-    path: 'signin',
+    path: 'sign-in',
     component: SigninComponent
   },
   {
-    path: 'forgot',
+    path: 'reset-password',
     component: ForgotComponent
   }
 ];

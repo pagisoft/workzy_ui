@@ -1,4 +1,20 @@
 
+    <header class="header-2 access-page-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="header-top">
+              <div class="logo-area">
+                <a href="index.html"><img src="assets/images/logo-2.png" alt=""></a>
+              </div>
+              <div class="top-nav">
+               <a routerLink="/panel/sign-in" class="account-page-link">Login</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
  
     <div class="padding-top-90 padding-bottom-90 access-page-bg">
       <div class="container">
@@ -6,19 +22,18 @@
           <div class="col-xl-4 col-md-6">
             <div class="access-form">
               <div class="form-header">
-                <h5><i data-feather="edit"></i>Employer Signup </h5>
+                <h5><i data-feather="edit"></i>Register Account</h5>
               </div>
-              
-              <form ngNativeValidate [formGroup]="signupForm" (ngSubmit)="signup()">
+             
+              <form action="#">
                 <div class="form-group">
-                  <input type="text" placeholder="Username" class="form-control" formControlName="username" >
+                  <input type="text" placeholder="Username" class="form-control">
                 </div>
                 <div class="form-group">
-                  <input type="email" placeholder="Email Address" class="form-control" formControlName="email">
+                  <input type="email" placeholder="Email Address" class="form-control">
                 </div>
-              
-                  <div class="form-group">
-                  <input type="password" placeholder="Password" class="form-control" formControlName="password" >
+                <div class="form-group">
+                  <input type="password" placeholder="Password" class="form-control">
                 </div>
                 <div class="more-option terms">
                   <div class="mt-0 terms">
@@ -31,8 +46,8 @@
                 <button class="button primary-bg btn-block">Register</button>
               </form>
               <div class="shortcut-login">
-                
-                <p>Already have an account? <a routerLink="/sessions/signin">Login</a></p>
+               
+                <p>Already have an account? <a routerLink="/panel/sign-in">Login</a></p>
               </div>
             </div>
           </div>
