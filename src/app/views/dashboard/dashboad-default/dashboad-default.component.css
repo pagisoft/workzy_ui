@@ -6,7 +6,9 @@
 
 }
 
-
+.dropdown .bootstrap-select{
+    display: none !important;
+}
 /* Shared */
 .loginBtn {
   box-sizing: border-box;
