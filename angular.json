@@ -31,11 +31,32 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/styles/app/_app.scss",
-              "src/styles.css"
+             
+              "src/assets/global/main.scss",
+
             ],
             "scripts": [
-              "node_modules/echarts/dist/echarts.min.js"
+                  "src/assets/js/jquery.min.js",
+                  "src/assets/js/searchMap.js",
+                 
+                  "src/assets/js/custom.js",
+                  "src/assets/js/popper.min.js",
+                  "src/assets/js/bootstrap.min.js",
+                  "src/assets/js/feather.min.js",
+                  "src/assets/js/bootstrap-select.min.js",
+                  "src/assets/js/jquery.nstSlider.min.js",
+                  "src/assets/js/owl.carousel.min.js",
+                  "src/assets/js/visible.js",
+                  "src/assets/js/jquery.countTo.js",
+                  "src/assets/js/chart.js",
+                  "src/assets/js/plyr.js",
+                  "src/assets/js/tinymce.min.js",
+                  "src/assets/js/slick.min.js",
+                  "src/assets/js/jquery.ajaxchimp.min.js",
+                  "src/assets/js/dashboard/js/dashboard.js",
+                  "src/assets/js/dashboard/js/datePicker.js",
+                  "src/assets/js/dashboard/js/upload-input.js"
+
             ]
           },
           "configurations": {
