@@ -20,7 +20,8 @@ export class SigninComponent implements OnInit {
     constructor(
         private fb: FormBuilder,
         private auth: AuthService,
-        private router: Router
+        private router: Router,
+        private toastr: ToastrService,
     ) { }
 
     ngOnInit() {
@@ -46,8 +47,11 @@ export class SigninComponent implements OnInit {
         this.loadingText = 'Sigining in...';
         this.auth.signin(this.signinForm.value)
             .subscribe(res => {
-                alert(" Signin Successfull - "+ res.token);
-            });
+                 this.toastr.success('success!', 'Login Successfully! ', { timeOut: 5000 });
+            } ,error=>{
+                   
+                   this.toastr.error('Error! ', 'Login failed , Please try again with valid credentials!', {progressBar: true});            
+                          })
     }
 
 }

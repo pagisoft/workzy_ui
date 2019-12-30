@@ -25,15 +25,15 @@
                 <h5><i data-feather="edit"></i>Register Account</h5>
               </div>
              
-              <form action="#">
+               <form ngNativeValidate [formGroup]="signupForm" (ngSubmit)="signup()">
                 <div class="form-group">
-                  <input type="text" placeholder="Username" class="form-control">
+                  <input type="text" placeholder="Username" formControlName="username" class="form-control">
                 </div>
                 <div class="form-group">
-                  <input type="email" placeholder="Email Address" class="form-control">
+                  <input type="email" placeholder="Email Address" formControlName="email" class="form-control">
                 </div>
                 <div class="form-group">
-                  <input type="password" placeholder="Password" class="form-control">
+                  <input type="password" placeholder="Password" formControlName="password" class="form-control">
                 </div>
                 <div class="more-option terms">
                   <div class="mt-0 terms">

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationService } from '../../../../services/navigation.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
+
 import {
     AuthService,
     FacebookLoginProvider,
@@ -20,7 +22,8 @@ export class HeaderSidebarLargeComponent implements OnInit {
     constructor(
       private modalService: NgbModal,
       private navService: NavigationService,
-      private socialAuthService: AuthService
+      private socialAuthService: AuthService,
+              private toastr: ToastrService
     ) {
       
     }
@@ -56,7 +59,7 @@ export class HeaderSidebarLargeComponent implements OnInit {
           console.log(socialPlatform+" sign in data : " , userData);
           // Now sign-in with userData
           // ...
-             alert("Login successfully!") ;
+             this.toastr.success('success!', 'Login Successfully! ', { timeOut: 5000 });
         }
       );
     }

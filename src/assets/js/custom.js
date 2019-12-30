@@ -46,6 +46,8 @@ $(document).ready(function() {
     /*-----------------------------------
     Navbar
     -----------------------------------*/
+
+
     $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
       var $el = $(this);
       var $parent = $(this).offsetParent(".dropdown-menu");

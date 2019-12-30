@@ -22,15 +22,14 @@
             <div class="access-form">
               <div class="form-header">
                 <h5><i data-feather="user"></i>Set a new password</h5>
-                <p>Please enter your e-mail and we will send you the link to set a new password.</p>
               </div>
               <form action="#">
                 <div class="form-group">
-                  <input type="email" placeholder="Email Address" (ngModel)="email" class="form-control">
+                  <input type="text" placeholder="New password" (ngModel)="password" class="form-control">
                 </div>
                
                 
-                <button class="button primary-bg btn-block" (click)="forgotPassword()">Send Recovery Email</button>
+                <button class="button primary-bg btn-block" (click)="changePassword()">Change Password</button>
               </form>
               
           </div>

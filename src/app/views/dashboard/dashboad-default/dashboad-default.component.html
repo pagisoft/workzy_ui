@@ -23,7 +23,7 @@
               <div class="searchAndFilter">
                 <form action="#" class="search-form">
                   <input type="text" placeholder="Enter Keywords">
-                  <select class="selectpicker" id="search-location">
+                  <select class="selectpicker1" id="search-location">
                     <option value="" selected>Location</option>
                     <option value="california">California</option>
                     <option value="las-vegas">Las Vegas</option>
@@ -34,7 +34,7 @@
                     <option value="washington">Washington DC</option>
                     <option value="neveda">Neveda</option>
                   </select>
-                  <select class="selectpicker" id="search-category">
+                  <select class="selectpicker1" id="search-category">
                     <option value="" selected>Category</option>
                     <option value="real-state">Real State</option>
                     <option value="vehicales">Vehicales</option>
@@ -772,8 +772,8 @@
               <div class="shortcut-login">
                 
                 <div class="buttons">
-                  <a href="#" class="facebook"><i class="fab fa-facebook-f"></i>Facebook</a>
-                  <a href="#" class="google"><i class="fab fa-google"></i>Google</a>
+                   <a class="facebook" (click)="socialSignIn('facebook')"><i class="fab fa-facebook-f"></i>Facebook</a>
+                    <a  class="google" (click)="socialSignIn('google')"><i class="fab fa-google"></i>Google</a>
                 </div>
                 
               </div>

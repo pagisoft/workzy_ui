@@ -46,13 +46,13 @@ export class SignupComponent implements OnInit {
          
        }
 
-         this.auth.signupTalent(data)
+         this.auth.signupEmployer(data)
               .subscribe(res =>{
       
                    this.toastr.success('success!', 'Employer Registered Successfully! ', { timeOut: 5000 });
                    this.ngOnInit();
 
-                   this.router.navigate(['/sessions/signin']);
+                   this.router.navigate(['/panel/sign-in']);
               },error=>{
                    
                    this.toastr.error(error.error.message, 'Error!', {progressBar: true});            

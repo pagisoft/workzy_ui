@@ -27,14 +27,14 @@ export class AuthService {
     return of({});
   }
 
-  signupTalent(creds) {
+  signupEmployer(creds) {
 
 
     let body = JSON.stringify(creds);
     let headers = new HttpHeaders();
     headers = headers.append('Content-Type', 'application/json');
 
-     return this.http.post<any>(environment.apiUrl + 'signup', body,{headers: headers})
+     return this.http.post<any>(environment.apiUrl + 'auth/signupEmployer', body,{headers: headers})
          .map(response => {
 
             of({}).pipe(delay(1500));
@@ -76,6 +76,36 @@ export class AuthService {
   signout() {
     this.authenticated = false;
     this.store.setItem("demo_login_status", false);
-    this.router.navigateByUrl("/sessions/signin");
+    this.router.navigateByUrl("/panel/sign-in");
   }
+
+
+  forgotPassword(creds){
+      
+    let body = JSON.stringify(creds);
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/json');
+
+     return this.http.post<any>(environment.apiUrl + 'auth/forgot', body,{headers: headers})
+         .map(response => {
+
+            of({}).pipe(delay(1500));
+            return response;
+          })
+  }
+
+  changePassword(creds){
+      
+    let body = JSON.stringify(creds);
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/json');
+
+     return this.http.post<any>(environment.apiUrl + 'auth/reset', body,{headers: headers})
+         .map(response => {
+
+            of({}).pipe(delay(1500));
+            return response;
+          })
+  }
+
 }
