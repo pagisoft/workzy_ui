@@ -23,14 +23,14 @@
               <div class="form-header">
                 <h5><i data-feather="user"></i>Set a new password</h5>
               </div>
-              <form action="#">
+              
                 <div class="form-group">
-                  <input type="text" placeholder="New password" (ngModel)="password" class="form-control">
+                  <input type="text" placeholder="New password" [(ngModel)]="password" class="form-control">
                 </div>
                
                 
                 <button class="button primary-bg btn-block" (click)="changePassword()">Change Password</button>
-              </form>
+             
               
           </div>
         </div>
