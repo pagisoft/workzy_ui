@@ -4,11 +4,13 @@ import { AuthLayoutComponent } from './shared/components/layouts/auth-layout/aut
 import { AuthGaurd } from './shared/services/auth.gaurd';
 import { BlankLayoutComponent } from './shared/components/layouts/blank-layout/blank-layout.component';
 import { AdminLayoutSidebarLargeComponent } from './shared/components/layouts/admin-layout-sidebar-large/admin-layout-sidebar-large.component';
+import { WelcomeLayoutComponent } from './shared/components/layouts/welcome-layout/welcome-layout-sidebar-large.component';
 
 const adminRoutes: Routes = [
-    {
-      path: 'dashboard',
-      loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
+     {
+      path: 'employer',
+      canActivate: [AuthGaurd],
+      loadChildren: () => import('./views/employerdashboard/dashboard/dashboard.module').then(m => m.DashboardModule)
     }
   ];
 
@@ -45,8 +47,17 @@ const routes: Routes = [
   {
     path: '',
     component: AdminLayoutSidebarLargeComponent,
-    canActivate: [AuthGaurd],
     children: adminRoutes
+  },
+  {
+    path: '',
+    component: WelcomeLayoutComponent,
+    children: [
+      {
+          path: 'dashboard',
+          loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
+      }
+    ]
   },
   {
     path: '**',

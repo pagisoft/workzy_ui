@@ -11,11 +11,11 @@ import {
 } from 'angular-6-social-login';
 
 @Component({
-  selector: 'app-secure-header-sidebar-large',
+  selector: 'app-header-sidebar-large',
   templateUrl: './header-sidebar-large.component.html',
   styleUrls: ['./header-sidebar-large.component.scss']
 })
-export class SecureHeaderSidebarLargeComponent implements OnInit {
+export class HeaderSidebarLargeComponent implements OnInit {
 
     notifications: any[];
 

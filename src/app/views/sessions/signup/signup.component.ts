@@ -23,9 +23,19 @@ export class SignupComponent implements OnInit {
         private router: Router,
          private store: LocalStoreService
 
-    ) {  }
+    ) {  
+
+        if(this.auth.authenticated){
+                             this.router.navigate(['/employer/home']);
+
+       }
+    }
 
   ngOnInit() {
+      if(this.auth.authenticated){
+                             this.router.navigate(['/employer/home']);
+
+       }
 
       this.signupForm = this.fb.group({
             email: ['', Validators.required],

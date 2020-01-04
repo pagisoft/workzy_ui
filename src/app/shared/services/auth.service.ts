@@ -6,7 +6,7 @@ import { delay } from 'rxjs/operators';
 import { HttpClient ,HttpHeaders, HttpErrorResponse} from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import {environment} from '../../../environments/environment';
-
+import { ToastrService } from 'ngx-toastr';
 @Injectable({
   providedIn: "root"
 })
@@ -15,12 +15,12 @@ export class AuthService {
   authenticated = true;
 
   constructor(private store: LocalStoreService,
-    public http: HttpClient, private router: Router) {
+    public http: HttpClient, private router: Router,private toastr: ToastrService) {
     this.checkAuth();
   }
 
   checkAuth() {
-    // this.authenticated = this.store.getItem("demo_login_status");
+    this.authenticated = this.store.getItem("workzy_login_status");
   }
 
   getuser() {
@@ -64,7 +64,7 @@ export class AuthService {
             this.authenticated = true;
             this.store.setItem('ut', response.token);
 
-            this.store.setItem('iamvt', true);
+            this.store.setItem('workzy_login_status', true);
 
             of({}).pipe(delay(1500));
             return response;
@@ -75,8 +75,10 @@ export class AuthService {
   }
   signout() {
     this.authenticated = false;
-    this.store.setItem("demo_login_status", false);
+    this.store.setItem("workzy_login_status", false);
     this.router.navigateByUrl("/panel/sign-in");
+
+                 this.toastr.success('success!', 'Logout Successfully! ', { timeOut: 5000 });
   }
 
 

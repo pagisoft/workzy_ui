@@ -4,7 +4,6 @@ import { FormGroup, FormBuilder, Validators ,FormControl} from '@angular/forms';
 import { AuthService } from '../../../shared/services/auth.service';
 import { Router, RouteConfigLoadStart, ResolveStart, RouteConfigLoadEnd, ResolveEnd } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { LocalStoreService } from '../../../shared/services/local-store.service';
 
 
 @Component({
@@ -22,9 +21,21 @@ export class SigninComponent implements OnInit {
         private auth: AuthService,
         private router: Router,
         private toastr: ToastrService,
-    ) { }
+    ) { 
+
+       if(this.auth.authenticated){
+                             this.router.navigate(['/employer/home']);
+
+       }
+    }
 
     ngOnInit() {
+
+        if(this.auth.authenticated){
+                             this.router.navigate(['/employer/home']);
+
+        }
+
         this.router.events.subscribe(event => {
             if (event instanceof RouteConfigLoadStart || event instanceof ResolveStart) {
                 this.loadingText = 'Loading Dashboard Module...';
@@ -37,8 +48,8 @@ export class SigninComponent implements OnInit {
         });
 
         this.signinForm = this.fb.group({
-            email: ['test@example.com', Validators.required],
-            password: ['1234', Validators.required]
+            email: ['', Validators.required],
+            password: ['', Validators.required]
         });
     }
 
@@ -47,6 +58,7 @@ export class SigninComponent implements OnInit {
         this.loadingText = 'Sigining in...';
         this.auth.signin(this.signinForm.value)
             .subscribe(res => {
+                 this.router.navigate(['/employer/home']);
                  this.toastr.success('success!', 'Login Successfully! ', { timeOut: 5000 });
             } ,error=>{
                    
