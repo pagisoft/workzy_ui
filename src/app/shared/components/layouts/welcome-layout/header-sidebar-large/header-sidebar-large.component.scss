@@ -143,6 +143,28 @@ $bodyFont: 'Roboto', sans-serif;
     }
 }
 
+.mat-icon-log-in {
+  position: relative;
+  top: 5px;
+  margin-right: 10px;
+}
+
+ul.dropdown-menu {
+  min-width: 250px!important;
+  top: 50px!important;
+  left: -180px!important;
+  .candidate-log-in {
+    border-bottom: 1px solid #eae7e7;
+  }
+  .menu-item {
+    padding-bottom: 5px;
+    a {
+      cursor: pointer;
+    }
+  }
+
+}
+
 
 @media all and (max-width: 479px) {
     .section-header-with-right-content {

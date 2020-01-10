@@ -1,31 +1,40 @@
- <!-- Header -->
-    <header>
+<!-- Header -->
+<header>
       <nav class="navbar navbar-expand-xl absolute-nav transparent-nav cp-nav navbar-light bg-light fluid-nav">
-        <a class="navbar-brand" href="index.html"> 
-          <img src="assets/images/logo.png" class="img-fluid" alt="">
+        <a class="navbar-brand" routerLink="/">
+          <img src="../../../../../../assets/images/logo.png" class="img-fluid" alt="">
         </a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         
+
           <ul class="navbar-nav ml-auto main-nav">
-            <li class="menu-item active"><a title="Home" href="home-1.html">JOB OFFERS</a></li>
-           
+
             <li class="menu-item dropdown">
-              <a title="" href="#" >COMPANIES</a>
-             
+              <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">LOG IN</a>
+              <ul class="dropdown-menu">
+
+                <li class="menu-item login-popup candidate-log-in">
+                  <a title="Log in as a Candidate" type="button" data-toggle="modal" data-target="#exampleModalLong">
+                    <mat-icon aria-label="supervisor_account" class="mat-icon-log-in">supervisor_account</mat-icon> Log in as a Candidate
+                  </a>
+                </li>
+
+                <li class="menu-item login-popup">
+                  <a title="Log in to Employer Panel" type="button" data-toggle="modal" routerLink="/panel/sign-in">
+                    <mat-icon aria-label="apartment" class="mat-icon-log-in">apartment</mat-icon> Log in to Employer Panel
+                  </a>
+                </li>
+
+              </ul>
             </li>
-            
-           
+
             <li class="menu-item post-job"><a title="Title" href="post-job.html"><i class="fas fa-plus"></i>Post a Job</a></li>
+
           </ul>
-          <ul class="navbar-nav ml-auto account-nav">
-           
-            <li class="menu-item login-popup"><button title="Title" type="button" data-toggle="modal" data-target="#exampleModalLong">TALENT LOGIN</button></li>
-            <li class="menu-item login-popup"><button title="Title" type="button" data-toggle="modal" routerLink="/panel/sign-in">EMPLOYER LOGIN</button></li>
-          </ul> 
+
         </div>
       </nav>
       <!-- Modal -->
@@ -40,9 +49,9 @@
                 </button>
               </div>
               <div class="modal-body">
-                
+
                 <div class="shortcut-login">
-                  
+
                   <div class="buttons">
                     <a class="facebook" (click)="socialSignIn('facebook')"><i class="fab fa-facebook-f"></i>Facebook</a>
                     <a  class="google" (click)="socialSignIn('google')"><i class="fab fa-google"></i>Google</a>

@@ -17,6 +17,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { CustomizerComponent } from '../customizer/customizer.component';
 import { SharedDirectivesModule } from '../../directives/shared-directives.module';
 import { FormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material';
 
 const components = [
     HeaderSidebarLargeComponent,
@@ -30,15 +31,16 @@ const components = [
 ];
 
 @NgModule({
-  imports: [
-    NgbModule,
-    RouterModule,
-    FormsModule,
-    SharedPipesModule,
-    SharedDirectivesModule,
-    PerfectScrollbarModule,
-    CommonModule
-  ],
+    imports: [
+        NgbModule,
+        RouterModule,
+        FormsModule,
+        SharedPipesModule,
+        SharedDirectivesModule,
+        PerfectScrollbarModule,
+        CommonModule,
+        MatIconModule
+    ],
   declarations: components,
   exports: components
 })
